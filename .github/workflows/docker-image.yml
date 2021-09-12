@@ -28,6 +28,6 @@ jobs:
       with:
         context: .
         build-args: |
-          revision=$REVISION
+          revision=${{ env.REVISION }}
         push: true
         tags: teyras/ttrss:r${{ env.REVISION }}
