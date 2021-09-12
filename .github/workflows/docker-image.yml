@@ -1,13 +1,13 @@
 name: Docker Image CI
 
 on:
-  push:
-    tags:
-      - 'r.*'
+  release:
+    types: [published]
 
 jobs:
 
   build:
+    if: ${{ startsWith(github.ref, 'refs/tags/r') }}
 
     runs-on: ubuntu-latest
 
